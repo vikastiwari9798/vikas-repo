@@ -27,7 +27,7 @@ jobs:
       - name: Run second.py
         id: run-script
         run: |
-          result=$(python add.py ${{ github.event.inputs.num1 }} ${{ github.event.inputs.num2 }} | awk '{print $2}')
+          result=$(python second.py ${{ github.event.inputs.num1 }} ${{ github.event.inputs.num2 }} | awk '{print $2}')
           echo "result=$result" >> $GITHUB_OUTPUT
 
       - name: Show result in summary
