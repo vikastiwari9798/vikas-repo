@@ -47,4 +47,4 @@ jobs:
         python -m pip install --upgrade pip
 
     - name: Run script
-      run: python First.py
+      run: python second.py
