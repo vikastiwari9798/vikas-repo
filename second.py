@@ -1,8 +1,9 @@
-import os
-num1 = float(os.getenv("NUM1", 0))
-num2 = float(os.getenv("NUM2", 0))
+import sys
 
+def add(a, b):
+    return a + b
 
-sum = num1+num2
-
-print("The sum of", num1, "and", num2, "is", sum)
+if __name__ == "__main__":
+    a = int(sys.argv[1])
+    b = int(sys.argv[2])
+    print(f"Result: {add(a, b)}")
