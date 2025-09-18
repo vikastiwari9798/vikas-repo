@@ -1,5 +1,7 @@
-num1 = float(input("Enter first number: "))
-num2 = float(input("Enter second number: "))
+import os
+num1 = float(os.getenv("NUM1", 0))
+num2 = float(os.getenv("NUM2", 0))
+
 
 sum = num1+num2
 
