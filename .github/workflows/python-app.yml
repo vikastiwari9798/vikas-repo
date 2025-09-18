@@ -1,14 +1,14 @@
-name: Run Python Add Script
+name: Add Two Numbers
 
 on:
   workflow_dispatch:
     inputs:
       num1:
-        description: 'First number'
+        description: 'Enter first number'
         required: true
         default: '5'
       num2:
-        description: 'Second number'
+        description: 'Enter second number'
         required: true
         default: '7'
 
@@ -24,10 +24,10 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: Run second.py
+      - name: Run add.py
         id: run-script
         run: |
-          result=$(python second.py ${{ github.event.inputs.num1 }} ${{ github.event.inputs.num2 }}
+          result=$(python add.py ${{ github.event.inputs.num1 }} ${{ github.event.inputs.num2 }} | awk '{print $2}')
           echo "result=$result" >> $GITHUB_OUTPUT
 
       - name: Show result in summary
