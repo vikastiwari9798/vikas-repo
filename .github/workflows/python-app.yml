@@ -24,6 +24,9 @@ jobs:
         with:
           python-version: '3.x'
 
+      - name: Run Script
+        run: python second.py ${{ github.event.inputs.num1 }} ${{ github.event.inputs.num2 }}
+
       - name: Run add.py
         id: run-script
         run: |
