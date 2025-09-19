@@ -20,6 +20,7 @@ elif c == "4":
     ans = a / b
 else:
     print("Invalid input")
+    ans = None
 
 print("ans: ", ans)
 

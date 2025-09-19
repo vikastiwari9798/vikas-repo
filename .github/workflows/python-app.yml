@@ -29,13 +29,22 @@ jobs:
           python-version: '3.x'
 
       - name: Run Script
+        env:
+          NUM1: ${{ github.event.inputs.num1 }}
+          NUM2: ${{ github.event.inputs.num2 }}
+          NUM3: ${{ github.event.inputs.num3 }}
         run: python calculator.py ${{ github.event.inputs.num1 }} ${{ github.event.inputs.num2 }} ${{ github.event.inputs.num3 }}
 
-      - name: Run add.py
+      - name: Run calculator.py
         id: run-script
+        env:
+          NUM1: ${{ github.event.inputs.num1 }}
+          NUM2: ${{ github.event.inputs.num2 }}
+          NUM3: ${{ github.event.inputs.num3 }}
         run: |
-          result=$(python calculator.py ${{ github.event.inputs.num1 }} ${{ github.event.inputs.num2 }} ${{ github.event.inputs.num3 }} | awk '{print $2}')
+          result=$(python calculator.py | awk '/ans:/ {print $2}')
           echo "result=$result" >> $GITHUB_OUTPUT
+
 
       - name: Show result in summary
         run: echo "### The sum is ${{ steps.run-script.outputs.result }}" >> $GITHUB_STEP_SUMMARY
