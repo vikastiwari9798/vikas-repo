@@ -23,9 +23,3 @@ else:
     ans = None
 
 print("ans: ", ans)
-
-input()
-
-
-
-
