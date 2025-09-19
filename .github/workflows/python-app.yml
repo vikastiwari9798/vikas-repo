@@ -47,4 +47,4 @@ jobs:
 
 
       - name: Show result in summary
-        run: echo "### The sum is ${{ steps.run-script.outputs.result }}" >> $GITHUB_STEP_SUMMARY
+        run: echo "### The result is ${{ steps.run-script.outputs.result }}" >> $GITHUB_STEP_SUMMARY
