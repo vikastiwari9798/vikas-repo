@@ -11,6 +11,10 @@ on:
         description: 'Enter second number'
         required: true
         default: '7'
+      num3:
+        description: ' Enter \n 1. Add \n 2.Sub \n 3.Mul \n 4.Divide'
+        required: true
+        default: '1'
 
 jobs:
   run-add:
@@ -25,12 +29,12 @@ jobs:
           python-version: '3.x'
 
       - name: Run Script
-        run: python second.py ${{ github.event.inputs.num1 }} ${{ github.event.inputs.num2 }}
+        run: python calculator.py ${{ github.event.inputs.num1 }} ${{ github.event.inputs.num2 }} ${{ github.event.inputs.num3 }}
 
       - name: Run add.py
         id: run-script
         run: |
-          result=$(python second.py ${{ github.event.inputs.num1 }} ${{ github.event.inputs.num2 }} | awk '{print $2}')
+          result=$(python calculator.py ${{ github.event.inputs.num1 }} ${{ github.event.inputs.num2 }} ${{ github.event.inputs.num3 }} | awk '{print $2}')
           echo "result=$result" >> $GITHUB_OUTPUT
 
       - name: Show result in summary
