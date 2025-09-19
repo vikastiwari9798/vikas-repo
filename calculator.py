@@ -8,13 +8,13 @@ a = float(os.getenv("NUM1", 0))
 b = float(os.getenv("NUM2", 0))
 c = (os.getenv("NUM3", 0))
 
-if c == "1" or c.lower() == "add":
+if c == "1":
     ans = a + b
-elif c == "2" or c.lower() == "sub":
+elif c == "2":
     ans = a - b
-elif c == "3" or c.lower() == "mul":
+elif c == "3":
     ans = a * b
-elif c == "4" or c.lower() == "divide":
+elif c == "4":
     ans = a / b
 else:
     print("Invalid input")
@@ -22,3 +22,7 @@ else:
 print("ans: ", ans)
 
 input()
+
+
+
+
