@@ -6,7 +6,9 @@ import os
 
 a = float(os.getenv("NUM1", 0))
 b = float(os.getenv("NUM2", 0))
-c = (os.getenv("NUM3", 0))
+c = (os.getenv("NUM3", "0"))
+
+print (a, b, c) 
 
 if c == "1":
     ans = a + b
