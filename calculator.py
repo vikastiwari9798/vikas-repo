@@ -1,6 +1,9 @@
 # a = float(input())
 # b = float(input())
 # c = input(" \n 1. Add \n 2.Sub \n 3.Mul \n 4.Divide \n Enter Operation: ")
+import os
+
+
 a = float(os.getenv("NUM1", 0))
 b = float(os.getenv("NUM2", 0))
 c = float(os.getenv("NUM3", 0))
